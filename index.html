@@ -7,48 +7,45 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #f7f6f2;
-  --surface: #ffffff;
-  --surface2: #f0efe9;
-  --border: #e0ded6;
-  --border-strong: #c8c6bc;
-  --text: #1a1917;
-  --text-muted: #6b6860;
-  --text-faint: #9b9990;
-  --green: #0a6640;
-  --green-bg: #e6f4ed;
-  --green-mid: #1d9e75;
-  --blue: #1044a0;
-  --blue-bg: #e8eef9;
-  --red: #8c2020;
-  --red-bg: #faeaea;
-  --amber: #7a4500;
-  --amber-bg: #fdf2e0;
-  --coral: #8c3010;
-  --coral-bg: #faede7;
-  --gray-badge: #4a4840;
-  --gray-badge-bg: #eeede8;
-  --mono: 'IBM Plex Mono', monospace;
-  --sans: 'IBM Plex Sans', sans-serif;
-  --radius: 6px;
-  --radius-lg: 10px;
+--bg: #f7f6f2;
+--surface: #ffffff;
+--surface2: #f0efe9;
+--border: #e0ded6;
+--border-strong: #c8c6bc;
+--text: #1a1917;
+--text-muted: #6b6860;
+--text-faint: #9b9990;
+--green: #0a6640;
+--green-bg: #e6f4ed;
+--green-mid: #1d9e75;
+--blue: #1044a0;
+--blue-bg: #e8eef9;
+--red: #8c2020;
+--red-bg: #faeaea;
+--amber: #7a4500;
+--amber-bg: #fdf2e0;
+--coral: #8c3010;
+--coral-bg: #faede7;
+--gray-badge: #4a4840;
+--gray-badge-bg: #eeede8;
+--mono: 'IBM Plex Mono', monospace;
+--sans: 'IBM Plex Sans', sans-serif;
+--radius: 6px;
+--radius-lg: 10px;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--sans); background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.6; min-height: 100vh; }
 .page { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
-
 /* HEADER */
 .header { border-bottom: 2px solid var(--text); padding-bottom: 1.1rem; margin-bottom: 1.1rem; display: flex; align-items: flex-end; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 .header-tag { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 0.35rem; }
 h1 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2; }
 .header-meta { font-family: var(--mono); font-size: 10px; color: var(--text-faint); text-align: right; line-height: 1.7; }
 @media (max-width: 520px) {
-  .header { flex-direction: column; align-items: flex-start; }
-  .header-meta { text-align: left; font-size: 9.5px; }
-  h1 { font-size: 19px; }
+.header { flex-direction: column; align-items: flex-start; }
+.header-meta { text-align: left; font-size: 9.5px; }
+h1 { font-size: 19px; }
 }
-
 /* BANNERS */
 .samr-banner { background: #fff3cd; border-left: 4px solid #e6a817; border-radius: 0 var(--radius) var(--radius) 0; padding: 0.8rem 1rem; margin-bottom: 0.9rem; font-size: 13px; line-height: 1.65; color: #5a3a00; }
 .samr-banner strong { font-weight: 600; }
@@ -56,46 +53,40 @@ h1 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2
 .intro { background: var(--green-bg); border-left: 3px solid var(--green-mid); border-radius: 0 var(--radius) var(--radius) 0; padding: 0.8rem 1rem; margin-bottom: 1.1rem; font-size: 13px; line-height: 1.65; color: #1a3028; }
 .intro strong { font-weight: 600; }
 .intro-title { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--green); margin-bottom: 0.35rem; font-weight: 500; }
-
 /* FILTERS */
 .filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.1rem; }
 .pill { font-family: var(--mono); font-size: 11px; letter-spacing: .04em; padding: 4px 11px; border-radius: 99px; border: 1px solid var(--border-strong); background: var(--surface); color: var(--text-muted); cursor: pointer; transition: all .15s; user-select: none; }
 .pill:hover { background: var(--surface2); color: var(--text); }
 .pill.active { background: var(--text); color: var(--bg); border-color: var(--text); }
-
 /* SECTION LABEL */
 .section-label { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; color: var(--text-faint); text-transform: uppercase; margin: 1.4rem 0 0.5rem; padding-bottom: 0.35rem; border-bottom: 1px solid var(--border); }
-
 /* CARDS */
 .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); margin-bottom: 6px; overflow: hidden; transition: border-color .15s; }
 .card:hover { border-color: var(--border-strong); }
 .card.hidden { display: none; }
-
 /* Card head: badge + title + duration + chevron */
 .card-head {
-  display: grid;
-  grid-template-columns: auto 1fr auto auto;
-  align-items: center;
-  gap: 8px;
-  padding: 0.65rem 0.9rem;
-  cursor: pointer;
-  user-select: none;
+display: grid;
+grid-template-columns: auto 1fr auto auto;
+align-items: center;
+gap: 8px;
+padding: 0.65rem 0.9rem;
+cursor: pointer;
+user-select: none;
 }
 .card-head:hover { background: var(--surface2); }
-
 /* On narrow screens: badge + chevron on top row, title + dur on bottom */
 @media (max-width: 480px) {
-  .card-head {
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-    row-gap: 3px;
-  }
-  .card-head .badge      { grid-column: 1; grid-row: 1; }
-  .card-head .chevron    { grid-column: 3; grid-row: 1; align-self: center; }
-  .card-head .card-title { grid-column: 1 / 4; grid-row: 2; font-size: 13px; }
-  .card-head .card-dur   { grid-column: 1 / 4; grid-row: 3; font-size: 11px; }
+.card-head {
+grid-template-columns: auto 1fr auto;
+grid-template-rows: auto auto;
+row-gap: 3px;
 }
-
+.card-head .badge      { grid-column: 1; grid-row: 1; }
+.card-head .chevron    { grid-column: 3; grid-row: 1; align-self: center; }
+.card-head .card-title { grid-column: 1 / 4; grid-row: 2; font-size: 13px; }
+.card-head .card-dur   { grid-column: 1 / 4; grid-row: 3; font-size: 11px; }
+}
 .badge { font-family: var(--mono); font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 99px; white-space: nowrap; letter-spacing: .03em; }
 .badge-resp { background: var(--green-bg); color: var(--green); }
 .badge-uri  { background: var(--blue-bg);  color: var(--blue); }
@@ -103,42 +94,34 @@ h1 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2
 .badge-gin  { background: var(--amber-bg); color: var(--amber); }
 .badge-other{ background: var(--gray-badge-bg); color: var(--gray-badge); }
 .badge-nec  { background: #fae0e0; color: #8c0000; }
-
 .card-title { font-size: 13.5px; font-weight: 500; color: var(--text); min-width: 0; }
-
 /* Duration: allow wrapping, no forced nowrap */
 .card-dur {
-  font-family: var(--mono);
-  font-size: 11.5px;
-  color: var(--green);
-  font-weight: 500;
-  text-align: right;
-  min-width: 0;
+font-family: var(--mono);
+font-size: 11.5px;
+color: var(--green);
+font-weight: 500;
+text-align: right;
+min-width: 0;
 }
-
 .chevron { width: 15px; height: 15px; flex-shrink: 0; color: var(--text-faint); transition: transform .2s; }
 .chevron.open { transform: rotate(180deg); }
-
 /* CARD BODY */
 .card-body { display: none; border-top: 1px solid var(--border); padding: 0.8rem 0.9rem; }
 .card-body.open { display: block; }
 .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem 1.8rem; }
 @media (max-width: 560px) { .info-grid { grid-template-columns: 1fr; } }
-
 .info-row { padding: 2px 0; }
 .info-label { font-family: var(--mono); font-size: 10px; letter-spacing: .08em; color: var(--text-faint); text-transform: uppercase; display: block; margin-bottom: 2px; }
 .info-val { font-size: 13px; color: var(--text); line-height: 1.55; }
 .info-val em { color: var(--text-muted); font-style: normal; font-size: 12px; }
 .info-val strong { font-weight: 600; }
-
 .alerta        { margin-top: 0.65rem; font-size: 12px; line-height: 1.55; color: var(--red);   background: var(--red-bg);   border-radius: var(--radius); padding: 6px 10px; }
 .alerta-amber  { margin-top: 0.65rem; font-size: 12px; line-height: 1.55; color: var(--amber); background: var(--amber-bg); border-radius: var(--radius); padding: 6px 10px; }
 .nota          { margin-top: 0.65rem; font-size: 12px; line-height: 1.55; color: var(--text-muted); background: var(--surface2); border-radius: var(--radius); padding: 6px 10px; }
-
 /* EXCLUSIONS */
 .exclusions { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 0.8rem 1rem; font-size: 13px; color: var(--text-muted); line-height: 1.8; margin-top: 0.5rem; }
 .exclusions strong { color: var(--text); font-weight: 600; }
-
 /* PEN-FAST */
 .pen-fast { background: var(--blue-bg); border: 1px solid #b5d0f0; border-radius: var(--radius-lg); padding: 0.8rem 1rem; margin-top: 1.4rem; }
 .pen-fast-title { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.5rem; font-weight: 500; }
@@ -146,538 +129,575 @@ h1 { font-size: 22px; font-weight: 600; letter-spacing: -.02em; line-height: 1.2
 .pen-table th { font-family: var(--mono); font-size: 10px; letter-spacing: .06em; color: var(--text-faint); text-transform: uppercase; padding: 4px 8px; border-bottom: 1px solid var(--border); text-align: left; }
 .pen-table td { padding: 4px 8px; border-bottom: 1px solid var(--border); color: var(--text); }
 .pen-table tr:last-child td { border-bottom: none; }
-
 /* FOOTER */
 .footer { margin-top: 2.5rem; padding-top: 1rem; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 10px; color: var(--text-faint); line-height: 1.8; letter-spacing: .02em; }
-
 /* PRINT */
 @media print {
-  body { background: #fff; }
-  .filters, .samr-banner { display: none; }
-  .card { break-inside: avoid; }
-  .card-body { display: block !important; }
-  .chevron { display: none; }
+body { background: #fff; }
+.filters, .samr-banner { display: none; }
+.card { break-inside: avoid; }
+.card-body { display: block !important; }
+.chevron { display: none; }
 }
 </style>
 </head>
 <body>
 <div class="page">
-
 <div class="header">
-  <div>
-    <div class="header-tag">Referencia clínica · Infectología</div>
-    <h1>Duraciones de tratamiento antibiótico</h1>
-  </div>
-  <div class="header-meta">
-    Actualizado 2024–2025<br>
-    SADI 2025 · IDSA · NICE · EAU · OMS AWaRe<br>
-    Mo et al., JAC-AMR 2025 (315 ECAs)
-  </div>
+<div>
+<div class="header-tag">Referencia clínica · Infectología</div>
+<h1>Duraciones de tratamiento antibiótico</h1>
 </div>
-
+<div class="header-meta">
+Actualizado 2024–2025<br>
+SADI 2025 · IDSA · NICE · EAU · OMS AWaRe<br>
+Mo et al., JAC-AMR 2025 (315 ECAs)
+</div>
+</div>
 <div class="samr-banner">
-  <div class="samr-title">⚠ Contexto Argentina — SAMR-AC</div>
-  En Argentina el SAMR comunitario representa el <strong>43.6% de los aislamientos de IPPB a nivel nacional</strong> (Red WHONET 2022–2023), con variación geográfica: <strong>≥50% en el norte</strong>, 25–50% en CABA/Buenos Aires/Cuyo/Centro, y 10–25% en la Patagonia. En la mayoría del país, las cefalosporinas de 1ª gen <strong>no son adecuadas como monoterapia empírica</strong> en infecciones purulentas. El TMP-SMX (resistencia &lt;3%) es la primera línea. El SAMR-AC argentino es el linaje ST5 SCC<i>mec</i> IVa, productor de leucocidina de Panton-Valentine.
+<div class="samr-title">⚠ Contexto Argentina — SAMR-AC</div>
+En Argentina el SAMR comunitario representa el <strong>43.6% de los aislamientos de IPPB a nivel nacional</strong> (Red WHONET 2022–2023), con variación geográfica: <strong>≥50% en el norte</strong>, 25–50% en CABA/Buenos Aires/Cuyo/Centro, y 10–25% en la Patagonia. En la mayoría del país, las cefalosporinas de 1ª gen <strong>no son adecuadas como monoterapia empírica</strong> en infecciones purulentas. El TMP-SMX (resistencia &lt;3%) es la primera línea. El SAMR-AC argentino es el linaje ST5 SCC<i>mec</i> IVa, productor de leucocidina de Panton-Valentine.
 </div>
-
 <div class="intro">
-  <div class="intro-title">El cambio más importante en duraciones</div>
-  Las duraciones tradicionales de 7, 14 o 21 días eran arbitrarias. El efecto bactericida es máximo a los 3–5 días; prolongar aumenta resistencias sin mejorar la curación. El 85% de los ECAs confirma equivalencia de cursos cortos. La regla: <strong>duración mínima que logre estabilidad clínica.</strong> Excepciones: endocarditis, osteomielitis, meningitis, TB, infecciones protésicas, inmunocompromiso grave.
+<div class="intro-title">El cambio más importante en duraciones</div>
+Las duraciones tradicionales de 7, 14 o 21 días eran arbitrarias. El efecto bactericida es máximo a los 3–5 días; prolongar aumenta resistencias sin mejorar la curación. El 85% de los ECAs confirma equivalencia de cursos cortos. La regla: <strong>duración mínima que logre estabilidad clínica.</strong> Excepciones: endocarditis, osteomielitis, meningitis, TB, infecciones protésicas, inmunocompromiso grave.
 </div>
-
 <div class="filters">
-  <span class="pill active" onclick="filter('all',this)">Todas</span>
-  <span class="pill" onclick="filter('skin',this)">Piel y tejidos</span>
-  <span class="pill" onclick="filter('resp',this)">Respiratorio</span>
-  <span class="pill" onclick="filter('uri',this)">Urinario</span>
-  <span class="pill" onclick="filter('gin',this)">Gineco-obs</span>
-  <span class="pill" onclick="filter('other',this)">Otras</span>
+<span class="pill active" onclick="filter('all',this)">Todas</span>
+<span class="pill" onclick="filter('skin',this)">Piel y tejidos</span>
+<span class="pill" onclick="filter('resp',this)">Respiratorio</span>
+<span class="pill" onclick="filter('uri',this)">Urinario</span>
+<span class="pill" onclick="filter('gin',this)">Gineco-obs</span>
+<span class="pill" onclick="filter('pie',this)">Pie diabético</span>
+<span class="pill" onclick="filter('other',this)">Otras</span>
 </div>
 
 <!-- ===== PIEL ===== -->
 <div class="section-label" data-cat="skin">Piel y tejidos blandos (IPPB) — Guía SADI 2025</div>
-
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Impétigo y ectima</span>
-    <span class="card-dur">Tópico 5 d / Sistémico 5–7 d</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Forma leve / localizada</span><span class="info-val">Ácido fusídico 2% crema 3 veces/día × <strong>5 días</strong> (preferido sobre mupirocina para preservarla en descolonización quirúrgica)<br>Alternativa: mupirocina 2% crema × 5 días</span></div>
-      <div class="info-row"><span class="info-label">Forma extensa o bullosa</span><span class="info-val">Cefalexina o cefadroxilo × <strong>5–7 días</strong>. Si no mejoría en 72 h: agregar TMP-SMX<br><em>Si no se puede revaluar a las 72 h: iniciar directamente amoxicilina + TMP-SMX</em></span></div>
-      <div class="info-row"><span class="info-label">Si sospecha SAMR-AC</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × 5–7 días<br>Alt: clindamicina, minociclina/doxiciclina (>8 años, no embarazadas)</span></div>
-      <div class="info-row"><span class="info-label">Medidas generales</span><span class="info-val">Baño con agua y jabón. Descostrado con agua de Códex o D'Alibour diluidas. Lavado de manos. No compartir toallas. No reintegrar a colegio/club hasta 2 días de iniciado el tratamiento.</span></div>
-    </div>
-    <div class="nota">Diagnóstico clínico. Cultivo solo en casos refractarios, inmunocomprometidos o brotes. Agentes: S. pyogenes, S. aureus (incluido SAMR-AC).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Impétigo y ectima</span>
+<span class="card-dur">Tópico 5 d / Sistémico 5–7 d</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Forma leve / localizada</span><span class="info-val">Ácido fusídico 2% crema 3 veces/día × <strong>5 días</strong> (preferido sobre mupirocina para preservarla en descolonización quirúrgica)<br>Alternativa: mupirocina 2% crema × 5 días</span></div>
+<div class="info-row"><span class="info-label">Forma extensa o bullosa</span><span class="info-val">Cefalexina o cefadroxilo × <strong>5–7 días</strong>. Si no mejoría en 72 h: agregar TMP-SMX<br><em>Si no se puede revaluar a las 72 h: iniciar directamente amoxicilina + TMP-SMX</em></span></div>
+<div class="info-row"><span class="info-label">Si sospecha SAMR-AC</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × 5–7 días<br>Alt: clindamicina, minociclina/doxiciclina (>8 años, no embarazadas)</span></div>
+<div class="info-row"><span class="info-label">Medidas generales</span><span class="info-val">Baño con agua y jabón. Descostrado con agua de Códex o D'Alibour diluidas. Lavado de manos. No compartir toallas. No reintegrar a colegio/club hasta 2 días de iniciado el tratamiento.</span></div>
+</div>
+<div class="nota">Diagnóstico clínico. Cultivo solo en casos refractarios, inmunocomprometidos o brotes. Agentes: S. pyogenes, S. aureus (incluido SAMR-AC).</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Forunculosis</span>
-    <span class="card-dur">ATB solo si indicado: 5–7 d</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Forma leve</span><span class="info-val">Solo tratamiento local: jabón neutro, antisépticos (iodopovidona o clorhexidina), calor húmedo. <em>ATB sistémico NO indicado.</em></span></div>
-      <div class="info-row"><span class="info-label">Si fluctuación o grande</span><span class="info-val">Drenaje quirúrgico con técnica aséptica</span></div>
-      <div class="info-row"><span class="info-label">Indicación ATB sistémico</span><span class="info-val">Celulitis circundante, lesiones múltiples, localización en rostro, inmunodeficiencia, compromiso sistémico</span></div>
-      <div class="info-row"><span class="info-label">ATB de elección (Argentina)</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>5–7 días</strong><br>Alternativas: doxiciclina o minociclina (>8 años)</span></div>
-    </div>
-    <div class="alerta">⚠ SAMR-AC causa el 82% de los forúnculos en Argentina. Las cefalosporinas de 1ª gen NO son adecuadas como monoterapia empírica. Ciprofloxacina y rifampicina no se recomiendan de rutina.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Forunculosis</span>
+<span class="card-dur">ATB solo si indicado: 5–7 d</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Forma leve</span><span class="info-val">Solo tratamiento local: jabón neutro, antisépticos (iodopovidona o clorhexidina), calor húmedo. <em>ATB sistémico NO indicado.</em></span></div>
+<div class="info-row"><span class="info-label">Si fluctuación o grande</span><span class="info-val">Drenaje quirúrgico con técnica aséptica</span></div>
+<div class="info-row"><span class="info-label">Indicación ATB sistémico</span><span class="info-val">Celulitis circundante, lesiones múltiples, localización en rostro, inmunodeficiencia, compromiso sistémico</span></div>
+<div class="info-row"><span class="info-label">ATB de elección (Argentina)</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>5–7 días</strong><br>Alternativas: doxiciclina o minociclina (>8 años)</span></div>
+</div>
+<div class="alerta">⚠ SAMR-AC causa el 82% de los forúnculos en Argentina. Las cefalosporinas de 1ª gen NO son adecuadas como monoterapia empírica. Ciprofloxacina y rifampicina no se recomiendan de rutina.</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Absceso cutáneo (incluye recurrentes)</span>
-    <span class="card-dur">Drenaje. ATB si indicado: 5–7 d</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Tratamiento base</span><span class="info-val"><strong>Incisión y drenaje quirúrgico abierto.</strong> Suficiente en la mayoría de inmunocompetentes. La aspiración con aguja es inferior y no se recomienda.</span></div>
-      <div class="info-row"><span class="info-label">Indicación ATB sistémico</span><span class="info-val">Drenaje incompleto, inmunodepresión, lactantes, edad avanzada, compromiso sistémico, lesiones múltiples, gran tamaño o celulitis asociada</span></div>
-      <div class="info-row"><span class="info-label">ATB de elección</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>5–7 días</strong><br>Alternativas: doxiciclina, minociclina (>8 años), clindamicina</span></div>
-      <div class="info-row"><span class="info-label">Abscesos recurrentes</span><span class="info-val">Cultivo temprano. ATB según cultivo × 5–10 días. Descolonización: mupirocina nasal 5 días + baño diario con clorhexidina. Incluir grupo familiar y mascotas.</span></div>
-    </div>
-    <div class="alerta-amber">⚠ En regiones con SAMR-AC >10–15% (mayoría del país), las cefalosporinas de 1ª gen NO son adecuadas empíricamente. Buscar causas locales en recurrentes: quiste pilonidal, hidradenitis supurativa, material extraño.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Absceso cutáneo (incluye recurrentes)</span>
+<span class="card-dur">Drenaje. ATB si indicado: 5–7 d</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Tratamiento base</span><span class="info-val"><strong>Incisión y drenaje quirúrgico abierto.</strong> Suficiente en la mayoría de inmunocompetentes. La aspiración con aguja es inferior y no se recomienda.</span></div>
+<div class="info-row"><span class="info-label">Indicación ATB sistémico</span><span class="info-val">Drenaje incompleto, inmunodepresión, lactantes, edad avanzada, compromiso sistémico, lesiones múltiples, gran tamaño o celulitis asociada</span></div>
+<div class="info-row"><span class="info-label">ATB de elección</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>5–7 días</strong><br>Alternativas: doxiciclina, minociclina (>8 años), clindamicina</span></div>
+<div class="info-row"><span class="info-label">Abscesos recurrentes</span><span class="info-val">Cultivo temprano. ATB según cultivo × 5–10 días. Descolonización: mupirocina nasal 5 días + baño diario con clorhexidina. Incluir grupo familiar y mascotas.</span></div>
+</div>
+<div class="alerta-amber">⚠ En regiones con SAMR-AC >10–15% (mayoría del país), las cefalosporinas de 1ª gen NO son adecuadas empíricamente. Buscar causas locales en recurrentes: quiste pilonidal, hidradenitis supurativa, material extraño.</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Celulitis / erisipela por gravedad</span>
-    <span class="card-dur">5–7 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Leve — ambulatorio</span><span class="info-val">Cefalexina o cefadroxilo × <strong>5–7 días</strong><br>Si riesgo SAMR o sin respuesta 48–72 h: + TMP-SMX o doxiciclina/minociclina<br>Alergia beta-lactámicos: clindamicina</span></div>
-      <div class="info-row"><span class="info-label">Moderada — internación</span><span class="info-val">Cefazolina IV<br>Si riesgo SAMR-AC o sin respuesta 48–72 h: + vancomicina IV o TMP-SMX<br>Si riesgo BGN: ceftriaxona en lugar de cefazolina</span></div>
-      <div class="info-row"><span class="info-label">Grave — UCI</span><span class="info-val">Vancomicina + piperacilina/tazobactam o cefalo 3ª/4ª gen + clindamicina (efecto antitoxina)</span></div>
-      <div class="info-row"><span class="info-label">Medidas complementarias</span><span class="info-val">Marcar bordes con marcador. Elevar el miembro. Reevaluar a las 48–72 h. Tratar puerta de entrada (intertrigos, onicomicosis).</span></div>
-    </div>
-    <div class="nota">No usar penicilina benzatínica para el episodio agudo (mayor tasa de fracasos). Etiología principal: S. pyogenes y S. aureus (incluido SAMR-AC en formas abscedadas).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Celulitis / erisipela por gravedad</span>
+<span class="card-dur">5–7 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Leve — ambulatorio</span><span class="info-val">Cefalexina o cefadroxilo × <strong>5–7 días</strong><br>Si riesgo SAMR o sin respuesta 48–72 h: + TMP-SMX o doxiciclina/minociclina<br>Alergia beta-lactámicos: clindamicina</span></div>
+<div class="info-row"><span class="info-label">Moderada — internación</span><span class="info-val">Cefazolina IV<br>Si riesgo SAMR-AC o sin respuesta 48–72 h: + vancomicina IV o TMP-SMX<br>Si riesgo BGN: ceftriaxona en lugar de cefazolina</span></div>
+<div class="info-row"><span class="info-label">Grave — UCI</span><span class="info-val">Vancomicina + piperacilina/tazobactam o cefalo 3ª/4ª gen + clindamicina (efecto antitoxina)</span></div>
+<div class="info-row"><span class="info-label">Medidas complementarias</span><span class="info-val">Marcar bordes con marcador. Elevar el miembro. Reevaluar a las 48–72 h. Tratar puerta de entrada (intertrigos, onicomicosis).</span></div>
+</div>
+<div class="nota">No usar penicilina benzatínica para el episodio agudo (mayor tasa de fracasos). Etiología principal: S. pyogenes y S. aureus (incluido SAMR-AC en formas abscedadas).</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Celulitis / erisipela recurrente — profilaxis</span>
-    <span class="card-dur">6–12 meses</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Indicación</span><span class="info-val">Luego de <strong>2–4 episodios</strong> en un año, una vez fracasadas las medidas no farmacológicas</span></div>
-      <div class="info-row"><span class="info-label">Esquemas</span><span class="info-val">Penicilina benzatínica 1.2–2.4 MU IM c/2–4 semanas<br>Penicilina V oral 500.000 UI c/12 h × 6–12 meses<br>Alergia penicilina: eritromicina 250 mg c/12 h u otros macrólidos</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>6–12 meses.</strong> Disminuir dosis al año sin intercurrencias; suspender a los 2 años si no reaparecen episodios.</span></div>
-      <div class="info-row"><span class="info-label">Medidas no farmacológicas</span><span class="info-val">Reducción de peso · Tratamiento de linfedema (medias elásticas 30–60 mmHg) · Elevación de MMII · Tratamiento de micosis · Cesación tabáquica · Control glucémico</span></div>
-    </div>
-    <div class="nota">La antibioticoterapia reduce el riesgo de recurrencia ~69%, pero su efecto disminuye al suspenderla. S. pyogenes tiene 0% de resistencia a penicilina en Argentina (Red WHONET).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Celulitis / erisipela recurrente — profilaxis</span>
+<span class="card-dur">6–12 meses</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Indicación</span><span class="info-val">Luego de <strong>2–4 episodios</strong> en un año, una vez fracasadas las medidas no farmacológicas</span></div>
+<div class="info-row"><span class="info-label">Esquemas</span><span class="info-val">Penicilina benzatínica 1.2–2.4 MU IM c/2–4 semanas<br>Penicilina V oral 500.000 UI c/12 h × 6–12 meses<br>Alergia penicilina: eritromicina 250 mg c/12 h u otros macrólidos</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>6–12 meses.</strong> Disminuir dosis al año sin intercurrencias; suspender a los 2 años si no reaparecen episodios.</span></div>
+<div class="info-row"><span class="info-label">Medidas no farmacológicas</span><span class="info-val">Reducción de peso · Tratamiento de linfedema (medias elásticas 30–60 mmHg) · Elevación de MMII · Tratamiento de micosis · Cesación tabáquica · Control glucémico</span></div>
+</div>
+<div class="nota">La antibioticoterapia reduce el riesgo de recurrencia ~69%, pero su efecto disminuye al suspenderla. S. pyogenes tiene 0% de resistencia a penicilina en Argentina (Red WHONET).</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-nec">Necrosante</span>
-    <span class="card-title">Infecciones necrosantes (fascitis / mionecrosis)</span>
-    <span class="card-dur">Hasta 48–72 h post-última cirugía</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Señales de alarma</span><span class="info-val">Dolor intenso desproporcionado, hipoestesia, progresión bajo ATB, coloración azul-purpúrica, bullas hemorrágicas, crepitación, necrosis. Gold standard: exploración quirúrgica.</span></div>
-      <div class="info-row"><span class="info-label">Tratamiento (emergencia)</span><span class="info-val">Desbridamiento quirúrgico precoz y amplio. Re-exploraciones en todos los pacientes. Herida abierta. No cierre primario.</span></div>
-      <div class="info-row"><span class="info-label">ATB empírico</span><span class="info-val">Pip/tazobactam o carbapenémico + <strong>vancomicina</strong> + <strong>clindamicina</strong> o linezolid (efecto antitoxina)<br>Gangrena clostrídica: penicilina + clindamicina</span></div>
-      <div class="info-row"><span class="info-label">Duración ATB</span><span class="info-val">Hasta no requerir nuevo desbridamiento y <strong>48–72 h sin fiebre</strong> desde última cirugía. Pediatría: mínimo 5 días IV, total 10–14 días.</span></div>
-    </div>
-    <div class="alerta">⚠ Emergencia quirúrgica. No demorar por estudios de imagen. Mortalidad: 5–15% con tratamiento precoz; hasta 100% sin tratamiento en gangrena clostrídica.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-nec">Necrosante</span>
+<span class="card-title">Infecciones necrosantes (fascitis / mionecrosis)</span>
+<span class="card-dur">Hasta 48–72 h post-última cirugía</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Señales de alarma</span><span class="info-val">Dolor intenso desproporcionado, hipoestesia, progresión bajo ATB, coloración azul-purpúrica, bullas hemorrágicas, crepitación, necrosis. Gold standard: exploración quirúrgica.</span></div>
+<div class="info-row"><span class="info-label">Tratamiento (emergencia)</span><span class="info-val">Desbridamiento quirúrgico precoz y amplio. Re-exploraciones en todos los pacientes. Herida abierta. No cierre primario.</span></div>
+<div class="info-row"><span class="info-label">ATB empírico</span><span class="info-val">Pip/tazobactam o carbapenémico + <strong>vancomicina</strong> + <strong>clindamicina</strong> o linezolid (efecto antitoxina)<br>Gangrena clostrídica: penicilina + clindamicina</span></div>
+<div class="info-row"><span class="info-label">Duración ATB</span><span class="info-val">Hasta no requerir nuevo desbridamiento y <strong>48–72 h sin fiebre</strong> desde última cirugía. Pediatría: mínimo 5 días IV, total 10–14 días.</span></div>
+</div>
+<div class="alerta">⚠ Emergencia quirúrgica. No demorar por estudios de imagen. Mortalidad: 5–15% con tratamiento precoz; hasta 100% sin tratamiento en gangrena clostrídica.</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Piomiositis (absceso intramuscular)</span>
-    <span class="card-dur">≥2 semanas desde control de foco</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">ATB empírico</span><span class="info-val"><strong>Vancomicina</strong> (cobertura SAMR-AC) + pip/tazobactam o ampicilina-sulbactam (cobertura BGN)</span></div>
-      <div class="info-row"><span class="info-label">Drenaje</span><span class="info-val">Estadio 1 (invasivo): solo ATB. Estadios 2–3 (purulento/tardío): drenaje percutáneo o quirúrgico obligatorio.</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">IV hasta mejoría clínica → rotar a oral. <strong>Mínimo 2 semanas</strong> desde control de foco.</span></div>
-      <div class="info-row"><span class="info-label">Diagnóstico</span><span class="info-val">RMN con contraste (gold standard). Hemocultivos + cultivo de tejido. S. aureus (incluido SAMR-AC) en 30–90% de casos.</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Piomiositis (absceso intramuscular)</span>
+<span class="card-dur">≥2 semanas desde control de foco</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">ATB empírico</span><span class="info-val"><strong>Vancomicina</strong> (cobertura SAMR-AC) + pip/tazobactam o ampicilina-sulbactam (cobertura BGN)</span></div>
+<div class="info-row"><span class="info-label">Drenaje</span><span class="info-val">Estadio 1 (invasivo): solo ATB. Estadios 2–3 (purulento/tardío): drenaje percutáneo o quirúrgico obligatorio.</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">IV hasta mejoría clínica → rotar a oral. <strong>Mínimo 2 semanas</strong> desde control de foco.</span></div>
+<div class="info-row"><span class="info-label">Diagnóstico</span><span class="info-val">RMN con contraste (gold standard). Hemocultivos + cultivo de tejido. S. aureus (incluido SAMR-AC) en 30–90% de casos.</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Mordeduras de animales y humanas</span>
-    <span class="card-dur">Profilaxis 3–5 d / Tto 5–7 d</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">ATB de elección</span><span class="info-val">Amoxicilina-clavulánico (oral o IV según gravedad)<br>Alternativas: TMP-SMX o levofloxacina + metronidazol, o clindamicina<br>Alergia penicilina: clindamicina o TMP-SMX</span></div>
-      <div class="info-row"><span class="info-label">Profilaxis</span><span class="info-val">Dentro de las <strong>12 h</strong> × <strong>3–5 días</strong>. Indicar en: heridas punzantes, cara/mano/pie/genitales, aplastamiento, afectación articular u ósea, inmunocomprometidos</span></div>
-      <div class="info-row"><span class="info-label">Tratamiento infección</span><span class="info-val">Amoxicilina-clavulánico × <strong>5–7 días</strong>. IV si grave: ampicilina-sulbactam.</span></div>
-      <div class="info-row"><span class="info-label">Además considerar</span><span class="info-val">Vacuna antitetánica (sin refuerzo en últimos 10 años). Vacuna antirrábica si animal no vacunado, silvestre o imposible de observar. No cierre primario salvo cara.</span></div>
-    </div>
-    <div class="nota">Patógenos frecuentes: Pasteurella multocida (gatos 75%, perros 47%), Streptococcus, S. aureus, anaerobios. Mordeduras humanas: Streptococcus (50%), S. aureus (40%), Eikenella corrodens (30%).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Mordeduras de animales y humanas</span>
+<span class="card-dur">Profilaxis 3–5 d / Tto 5–7 d</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">ATB de elección</span><span class="info-val">Amoxicilina-clavulánico (oral o IV según gravedad)<br>Alternativas: TMP-SMX o levofloxacina + metronidazol, o clindamicina<br>Alergia penicilina: clindamicina o TMP-SMX</span></div>
+<div class="info-row"><span class="info-label">Profilaxis</span><span class="info-val">Dentro de las <strong>12 h</strong> × <strong>3–5 días</strong>. Indicar en: heridas punzantes, cara/mano/pie/genitales, aplastamiento, afectación articular u ósea, inmunocomprometidos</span></div>
+<div class="info-row"><span class="info-label">Tratamiento infección</span><span class="info-val">Amoxicilina-clavulánico × <strong>5–7 días</strong>. IV si grave: ampicilina-sulbactam.</span></div>
+<div class="info-row"><span class="info-label">Además considerar</span><span class="info-val">Vacuna antitetánica (sin refuerzo en últimos 10 años). Vacuna antirrábica si animal no vacunado, silvestre o imposible de observar. No cierre primario salvo cara.</span></div>
+</div>
+<div class="nota">Patógenos frecuentes: Pasteurella multocida (gatos 75%, perros 47%), Streptococcus, S. aureus, anaerobios. Mordeduras humanas: Streptococcus (50%), S. aureus (40%), Eikenella corrodens (30%).</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Escabiosis (sarna)</span>
-    <span class="card-dur">2 aplicaciones / 2 dosis</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea — adultos y niños >2 meses</span><span class="info-val"><strong>Permetrina 5% crema:</strong> aplicar en cuerpo entero (incluir pliegues, genitales, bajo uñas; cabeza en niños pequeños), dejar 8–12 h, repetir a los <strong>7–10 días</strong><br><em>Evidencia de menor sensibilidad del ácaro en aumento — considerar alternativas ante falla</em></span></div>
-      <div class="info-row"><span class="info-label">Alternativa tópica — benzoato de bencilo (BB) 25%</span><span class="info-val">Aplicar 2–3 días consecutivos, repetir esquema a los 7–10 días<br>Eficacia igual o superior a permetrina en varios ECAs (87% vs 27% en uno de ellos)<br><em>Limita su uso: irritación local / burning frecuente</em></span></div>
-      <div class="info-row"><span class="info-label">Alternativa oral — ivermectina</span><span class="info-val"><strong>~200 µg/kg</strong> vía oral, <strong>2 dosis separadas por 7–10 días</strong><br>Indicada en: falla tópica, escabiosis costrosa (noruega), casos extensos o en brotes institucionales<br>Eficacia similar a BB, con menos efectos adversos locales. Mejor tolerancia.</span></div>
-      <div class="info-row"><span class="info-label">Lactantes &lt;2 meses</span><span class="info-val">Azufre precipitado (6–10%) en crema o vaselina<br>Permetrina puede considerarse desde los 2 meses según algunas revisiones</span></div>
-    </div>
-    <div class="info-grid" style="margin-top:0.6rem">
-      <div class="info-row"><span class="info-label">Medidas indispensables</span><span class="info-val">Tratar a <strong>todos los convivientes y parejas sexuales simultáneamente</strong>, aunque no tengan síntomas<br>Lavar ropa de cama y ropa interior a >50°C, o guardar en bolsa cerrada varios días<br>El picazón puede persistir 2–4 semanas post-tratamiento exitoso (reacción a ácaros muertos)</span></div>
-      <div class="info-row"><span class="info-label">Causas frecuentes de fallo</span><span class="info-val">Aplicación incompleta del tópico · No repetir el ciclo · No tratar convivientes · No higienizar ropa y cama · Resistencia/baja respuesta a permetrina (en aumento global)</span></div>
-    </div>
-    <div class="nota">Estudio argentino (Ullón 2022, Avellaneda, Buenos Aires): permetrina 5% mostró efectividad aceptable en niños de 1–10 años asociada a medidas higiénico-sanitarias y tratamiento de todo el hogar. BB e ivermectina oral son igual o más eficaces en múltiples estudios recientes, especialmente ante fallas con permetrina. Fuentes: Uzun et al. 2024, Meyersburg et al. 2023, Restano et al. 2023, Alenezi et al. 2025, Cammarata et al. 2025, Sunderkötter et al. 2021.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Escabiosis (sarna)</span>
+<span class="card-dur">2 aplicaciones / 2 dosis</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea — adultos y niños >2 meses</span><span class="info-val"><strong>Permetrina 5% crema:</strong> aplicar en cuerpo entero (incluir pliegues, genitales, bajo uñas; cabeza en niños pequeños), dejar 8–12 h, repetir a los <strong>7–10 días</strong><br><em>Evidencia de menor sensibilidad del ácaro en aumento — considerar alternativas ante falla</em></span></div>
+<div class="info-row"><span class="info-label">Alternativa tópica — benzoato de bencilo (BB) 25%</span><span class="info-val">Aplicar 2–3 días consecutivos, repetir esquema a los 7–10 días<br>Eficacia igual o superior a permetrina en varios ECAs (87% vs 27% en uno de ellos)<br><em>Limita su uso: irritación local / burning frecuente</em></span></div>
+<div class="info-row"><span class="info-label">Alternativa oral — ivermectina</span><span class="info-val"><strong>~200 µg/kg</strong> vía oral, <strong>2 dosis separadas por 7–10 días</strong><br>Indicada en: falla tópica, escabiosis costrosa (noruega), casos extensos o en brotes institucionales<br>Eficacia similar a BB, con menos efectos adversos locales. Mejor tolerancia.</span></div>
+<div class="info-row"><span class="info-label">Lactantes &lt;2 meses</span><span class="info-val">Azufre precipitado (6–10%) en crema o vaselina<br>Permetrina puede considerarse desde los 2 meses según algunas revisiones</span></div>
+</div>
+<div class="info-grid" style="margin-top:0.6rem">
+<div class="info-row"><span class="info-label">Medidas indispensables</span><span class="info-val">Tratar a <strong>todos los convivientes y parejas sexuales simultáneamente</strong>, aunque no tengan síntomas<br>Lavar ropa de cama y ropa interior a >50°C, o guardar en bolsa cerrada varios días<br>El picazón puede persistir 2–4 semanas post-tratamiento exitoso (reacción a ácaros muertos)</span></div>
+<div class="info-row"><span class="info-label">Causas frecuentes de fallo</span><span class="info-val">Aplicación incompleta del tópico · No repetir el ciclo · No tratar convivientes · No higienizar ropa y cama · Resistencia/baja respuesta a permetrina (en aumento global)</span></div>
+</div>
+<div class="nota">Estudio argentino (Ullón 2022, Avellaneda, Buenos Aires): permetrina 5% mostró efectividad aceptable en niños de 1–10 años asociada a medidas higiénico-sanitarias y tratamiento de todo el hogar. BB e ivermectina oral son igual o más eficaces en múltiples estudios recientes, especialmente ante fallas con permetrina. Fuentes: Uzun et al. 2024, Meyersburg et al. 2023, Restano et al. 2023, Alenezi et al. 2025, Cammarata et al. 2025, Sunderkötter et al. 2021.</div>
+</div>
 </div>
 
 <div class="card" data-cat="skin">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-skin">Piel</span>
-    <span class="card-title">Infección del sitio quirúrgico (ISQ)</span>
-    <span class="card-dur">Ciclo corto según gravedad</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Tratamiento base</span><span class="info-val">Siempre retirar sutura + incisión y drenaje. Desbridamiento de tejidos desvitalizados. Lavado con solución fisiológica.</span></div>
-      <div class="info-row"><span class="info-label">Cirugía limpia (tronco/cab/ext)</span><span class="info-val">Con signos sistémicos: cefalosporina 1ª gen (SAMS)<br>Si riesgo SAMR (colonización nasal, infección previa, ATB recientes): vancomicina</span></div>
-      <div class="info-row"><span class="info-label">Cirugía abdominal / vaginal</span><span class="info-val">Ampicilina-sulbactam, pip/tazobactam, o gentamicina + metronidazol (cobertura BGN + anaerobios)</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Ciclo corto según evolución. Si &lt;5 cm de eritema sin signos sistémicos: ATB innecesario, solo drenaje.</span></div>
-    </div>
-    <div class="nota">Los ATB postquirúrgicos prolongados no previenen ni curan la ISQ. VIHDA 2023: S. aureus 26%, S. epidermidis 9%, K. pneumoniae 9%, E. coli 9% (cirugía no laparoscópica).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-skin">Piel</span>
+<span class="card-title">Infección del sitio quirúrgico (ISQ)</span>
+<span class="card-dur">Ciclo corto según gravedad</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Tratamiento base</span><span class="info-val">Siempre retirar sutura + incisión y drenaje. Desbridamiento de tejidos desvitalizados. Lavado con solución fisiológica.</span></div>
+<div class="info-row"><span class="info-label">Cirugía limpia (tronco/cab/ext)</span><span class="info-val">Con signos sistémicos: cefalosporina 1ª gen (SAMS)<br>Si riesgo SAMR (colonización nasal, infección previa, ATB recientes): vancomicina</span></div>
+<div class="info-row"><span class="info-label">Cirugía abdominal / vaginal</span><span class="info-val">Ampicilina-sulbactam, pip/tazobactam, o gentamicina + metronidazol (cobertura BGN + anaerobios)</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Ciclo corto según evolución. Si &lt;5 cm de eritema sin signos sistémicos: ATB innecesario, solo drenaje.</span></div>
+</div>
+<div class="nota">Los ATB postquirúrgicos prolongados no previenen ni curan la ISQ. VIHDA 2023: S. aureus 26%, S. epidermidis 9%, K. pneumoniae 9%, E. coli 9% (cirugía no laparoscópica).</div>
+</div>
 </div>
 
 <!-- ===== RESPIRATORIO ===== -->
 <div class="section-label" data-cat="resp">Vías respiratorias</div>
-
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Faringoamigdalitis aguda (Streptococcus A)</span>
-    <span class="card-dur">5–10 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina 500–1000 mg c/8–12 h (adultos)<br><em>Niños: 50 mg/kg/día en 2–3 tomas, máx. 500 mg c/12 h</em></span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos y niños: <strong>10 días</strong><br>Azitromicina: <strong>5 días</strong><br><em>5 días: suficiente para síntomas; 10 días: mayor erradicación y prevención de fiebre reumática</em></span></div>
-      <div class="info-row"><span class="info-label">Alternativas (alergia)</span><span class="info-val">Cefalosporina 1ª gen (no anafiláctica)<br>Clindamicina / azitromicina (anafiláctica)</span></div>
-      <div class="info-row"><span class="info-label">Nota Argentina</span><span class="info-val">S. pyogenes tiene 0% de resistencia a penicilina (Red WHONET). Tasa de resistencia a clindamicina 2.7% y eritromicina 3.8% — en tendencia creciente.</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Faringoamigdalitis aguda (Streptococcus A)</span>
+<span class="card-dur">5–10 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina 500–1000 mg c/8–12 h (adultos)<br><em>Niños: 50 mg/kg/día en 2–3 tomas, máx. 500 mg c/12 h</em></span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos y niños: <strong>10 días</strong><br>Azitromicina: <strong>5 días</strong><br><em>5 días: suficiente para síntomas; 10 días: mayor erradicación y prevención de fiebre reumática</em></span></div>
+<div class="info-row"><span class="info-label">Alternativas (alergia)</span><span class="info-val">Cefalosporina 1ª gen (no anafiláctica)<br>Clindamicina / azitromicina (anafiláctica)</span></div>
+<div class="info-row"><span class="info-label">Nota Argentina</span><span class="info-val">S. pyogenes tiene 0% de resistencia a penicilina (Red WHONET). Tasa de resistencia a clindamicina 2.7% y eritromicina 3.8% — en tendencia creciente.</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Sinusitis bacteriana aguda</span>
-    <span class="card-dur">5 d adultos / 10 d niños</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea adultos</span><span class="info-val">Amoxicilina 500–1000 mg c/8 h<br><em>Si grave o sin mejoría en 48–72 h: + clavulánico</em></span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos: <strong>5 días</strong> · Niños: <strong>10 días</strong></span></div>
-      <div class="info-row"><span class="info-label">1ª línea niños</span><span class="info-val">Amoxicilina 80–90 mg/kg/día en 2–3 tomas</span></div>
-      <div class="info-row"><span class="info-label">Guías</span><span class="info-val">IDSA: 5–7 días adultos. NICE y OMS: 5 días.</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Sinusitis bacteriana aguda</span>
+<span class="card-dur">5 d adultos / 10 d niños</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea adultos</span><span class="info-val">Amoxicilina 500–1000 mg c/8 h<br><em>Si grave o sin mejoría en 48–72 h: + clavulánico</em></span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos: <strong>5 días</strong> · Niños: <strong>10 días</strong></span></div>
+<div class="info-row"><span class="info-label">1ª línea niños</span><span class="info-val">Amoxicilina 80–90 mg/kg/día en 2–3 tomas</span></div>
+<div class="info-row"><span class="info-label">Guías</span><span class="info-val">IDSA: 5–7 días adultos. NICE y OMS: 5 días.</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Otitis media aguda (OMA)</span>
-    <span class="card-dur">5–10 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina 500–1000 mg c/8 h (adultos)<br>Amoxicilina 80–90 mg/kg/día en 2–3 tomas (niños)</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos y niños >2 años leve-mod: <strong>5–7 días</strong><br>Niños &lt;2 años, severa o recurrente: <strong>7–10 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Si grave o &lt;6 meses</span><span class="info-val">Amoxicilina-clavulánico. Si falla: ceftriaxona IM × 3 días</span></div>
-      <div class="info-row"><span class="info-label">Espera activa</span><span class="info-val">OMA leve en >2 años: 48–72 h antes de iniciar ATB. Alta tasa de curación espontánea.</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Otitis media aguda (OMA)</span>
+<span class="card-dur">5–10 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina 500–1000 mg c/8 h (adultos)<br>Amoxicilina 80–90 mg/kg/día en 2–3 tomas (niños)</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Adultos y niños >2 años leve-mod: <strong>5–7 días</strong><br>Niños &lt;2 años, severa o recurrente: <strong>7–10 días</strong></span></div>
+<div class="info-row"><span class="info-label">Si grave o &lt;6 meses</span><span class="info-val">Amoxicilina-clavulánico. Si falla: ceftriaxona IM × 3 días</span></div>
+<div class="info-row"><span class="info-label">Espera activa</span><span class="info-val">OMA leve en >2 años: 48–72 h antes de iniciar ATB. Alta tasa de curación espontánea.</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Neumonía adquirida en la comunidad (NAC)</span>
-    <span class="card-dur">⬇ 5 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea adultos</span><span class="info-val">Amoxicilina 1000 mg c/8 h<br><em>Con comorbilidades: amoxicilina-clavulánico 875/125 mg c/8 h</em></span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>5 días</strong> si afebril ≥48 h y estable hemodinámicamente<br><em>Antes estándar: 7–14 días</em></span></div>
-      <div class="info-row"><span class="info-label">Alternativas</span><span class="info-val">Doxiciclina / macrólido (sin comorbilidades)<br>NAC severa: ceftriaxona IV ± azitromicina</span></div>
-      <div class="info-row"><span class="info-label">Excepciones</span><span class="info-val">S. aureus, Legionella, P. aeruginosa, empiema, absceso, neumonía necrotizante: prolongar</span></div>
-    </div>
-    <div class="alerta">⚠ IDSA, NICE y OMS establecen 5 días como estándar. El criterio es estabilidad clínica, no días calendario.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Neumonía adquirida en la comunidad (NAC)</span>
+<span class="card-dur">⬇ 5 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea adultos</span><span class="info-val">Amoxicilina 1000 mg c/8 h<br><em>Con comorbilidades: amoxicilina-clavulánico 875/125 mg c/8 h</em></span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>5 días</strong> si afebril ≥48 h y estable hemodinámicamente<br><em>Antes estándar: 7–14 días</em></span></div>
+<div class="info-row"><span class="info-label">Alternativas</span><span class="info-val">Doxiciclina / macrólido (sin comorbilidades)<br>NAC severa: ceftriaxona IV ± azitromicina</span></div>
+<div class="info-row"><span class="info-label">Excepciones</span><span class="info-val">S. aureus, Legionella, P. aeruginosa, empiema, absceso, neumonía necrotizante: prolongar</span></div>
+</div>
+<div class="alerta">⚠ IDSA, NICE y OMS establecen 5 días como estándar. El criterio es estabilidad clínica, no días calendario.</div>
+</div>
 </div>
 
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Exacerbación bacteriana de EPOC</span>
-    <span class="card-dur">⬇ 5 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina-clavulánico 875/125 mg c/8 h</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Sin riesgo Pseudomonas: <strong>5 días</strong><br>Riesgo P. aeruginosa: <strong>10–14 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Si Pseudomonas</span><span class="info-val">Ciprofloxacino 500–750 mg c/12 h o levofloxacino 500 mg c/12 h</span></div>
-      <div class="info-row"><span class="info-label">Indicación ATB</span><span class="info-val">Solo con ≥2 criterios de Anthonisen: disnea aumentada, aumento de volumen del esputo, purulencia</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Exacerbación bacteriana de EPOC</span>
+<span class="card-dur">⬇ 5 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Amoxicilina-clavulánico 875/125 mg c/8 h</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Sin riesgo Pseudomonas: <strong>5 días</strong><br>Riesgo P. aeruginosa: <strong>10–14 días</strong></span></div>
+<div class="info-row"><span class="info-label">Si Pseudomonas</span><span class="info-val">Ciprofloxacino 500–750 mg c/12 h o levofloxacino 500 mg c/12 h</span></div>
+<div class="info-row"><span class="info-label">Indicación ATB</span><span class="info-val">Solo con ≥2 criterios de Anthonisen: disnea aumentada, aumento de volumen del esputo, purulencia</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="resp">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-resp">Respiratorio</span>
-    <span class="card-title">Neumonía asociada a ventilación (NAVM)</span>
-    <span class="card-dur">⬇ 7–8 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>7–8 días</strong> en respondedores (antes: 14–21 días estándar)</span></div>
-      <div class="info-row"><span class="info-label">Excepciones</span><span class="info-val">P. aeruginosa, inmunocomprometidos, empiema, absceso, neumonía necrotizante: prolongar</span></div>
-      <div class="info-row"><span class="info-label">Guías</span><span class="info-val">IDSA 2016: 7 días (recomendación fuerte). ERS/ESCMID: 7–8 días con buena respuesta.</span></div>
-      <div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Empírico según flora local. Guiar por cultivos de BAL.</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-resp">Respiratorio</span>
+<span class="card-title">Neumonía asociada a ventilación (NAVM)</span>
+<span class="card-dur">⬇ 7–8 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val"><strong>7–8 días</strong> en respondedores (antes: 14–21 días estándar)</span></div>
+<div class="info-row"><span class="info-label">Excepciones</span><span class="info-val">P. aeruginosa, inmunocomprometidos, empiema, absceso, neumonía necrotizante: prolongar</span></div>
+<div class="info-row"><span class="info-label">Guías</span><span class="info-val">IDSA 2016: 7 días (recomendación fuerte). ERS/ESCMID: 7–8 días con buena respuesta.</span></div>
+<div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Empírico según flora local. Guiar por cultivos de BAL.</span></div>
+</div>
+</div>
 </div>
 
 <!-- ===== URINARIO ===== -->
 <div class="section-label" data-cat="uri">Tracto urinario</div>
-
 <div class="card" data-cat="uri">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-uri">Urinario</span>
-    <span class="card-title">Cistitis no complicada (mujer no embarazada)</span>
-    <span class="card-dur">Dosis única a 5 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Fosfomicina trometamol 3 g — <strong>dosis única</strong><br>Nitrofurantoína 100 mg c/8 h × <strong>5 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Alternativas</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>3 días</strong><br>Pivmecillinam 400 mg c/8 h × 3–5 días</span></div>
-      <div class="info-row"><span class="info-label">Excepciones → ≥7 días</span><span class="info-val">Embarazo, inmunosupresión, alteración urológica, ITU masculina</span></div>
-      <div class="info-row"><span class="info-label">Bacteriuria asintomática</span><span class="info-val">NO tratar, salvo embarazo o procedimiento urológico con riesgo de sangrado de mucosa</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-uri">Urinario</span>
+<span class="card-title">Cistitis no complicada (mujer no embarazada)</span>
+<span class="card-dur">Dosis única a 5 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Fosfomicina trometamol 3 g — <strong>dosis única</strong><br>Nitrofurantoína 100 mg c/8 h × <strong>5 días</strong></span></div>
+<div class="info-row"><span class="info-label">Alternativas</span><span class="info-val">TMP-SMX 160/800 mg c/12 h × <strong>3 días</strong><br>Pivmecillinam 400 mg c/8 h × 3–5 días</span></div>
+<div class="info-row"><span class="info-label">Excepciones → ≥7 días</span><span class="info-val">Embarazo, inmunosupresión, alteración urológica, ITU masculina</span></div>
+<div class="info-row"><span class="info-label">Bacteriuria asintomática</span><span class="info-val">NO tratar, salvo embarazo o procedimiento urológico con riesgo de sangrado de mucosa</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="uri">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-uri">Urinario</span>
-    <span class="card-title">Pielonefritis aguda no complicada</span>
-    <span class="card-dur">⬇ 5–7 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea oral</span><span class="info-val">Ciprofloxacino 500 mg c/12 h × <strong>7 días</strong><br>Levofloxacino 500 mg c/24 h × <strong>5 días</strong><br>Cefuroxima axetil 500 mg c/8–12 h × <strong>7 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Duración según ATB</span><span class="info-val">Quinolonas: <strong>5–7 días</strong> · Cefalo/amoxiclav: <strong>7–10 días</strong> · TMP-SMX: <strong>10–14 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Grave / internación</span><span class="info-val">Ceftriaxona 1–2 g c/24 h IV → rotar oral por antibiograma</span></div>
-      <div class="info-row"><span class="info-label">Evidencia</span><span class="info-val">7 días no inferior a 14 días con no-fluoroquinolonas (EAU 2023, RCT).</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-uri">Urinario</span>
+<span class="card-title">Pielonefritis aguda no complicada</span>
+<span class="card-dur">⬇ 5–7 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea oral</span><span class="info-val">Ciprofloxacino 500 mg c/12 h × <strong>7 días</strong><br>Levofloxacino 500 mg c/24 h × <strong>5 días</strong><br>Cefuroxima axetil 500 mg c/8–12 h × <strong>7 días</strong></span></div>
+<div class="info-row"><span class="info-label">Duración según ATB</span><span class="info-val">Quinolonas: <strong>5–7 días</strong> · Cefalo/amoxiclav: <strong>7–10 días</strong> · TMP-SMX: <strong>10–14 días</strong></span></div>
+<div class="info-row"><span class="info-label">Grave / internación</span><span class="info-val">Ceftriaxona 1–2 g c/24 h IV → rotar oral por antibiograma</span></div>
+<div class="info-row"><span class="info-label">Evidencia</span><span class="info-val">7 días no inferior a 14 días con no-fluoroquinolonas (EAU 2023, RCT).</span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="uri">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-uri">Urinario</span>
-    <span class="card-title">Prostatitis aguda</span>
-    <span class="card-dur">14–28 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Ciprofloxacino 500 mg c/12 h<br>TMP-SMX 160/800 mg c/12 h (mejor penetración prostática)</span></div>
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Mínimo <strong>2 semanas</strong>; hasta <strong>4 semanas</strong> según resolución de síntomas</span></div>
-      <div class="info-row"><span class="info-label">Inicio empírico</span><span class="info-val">Cefuroxima o ceftriaxona; rotar por antibiograma a ciprofloxacino o TMP-SMX</span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-uri">Urinario</span>
+<span class="card-title">Prostatitis aguda</span>
+<span class="card-dur">14–28 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Ciprofloxacino 500 mg c/12 h<br>TMP-SMX 160/800 mg c/12 h (mejor penetración prostática)</span></div>
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Mínimo <strong>2 semanas</strong>; hasta <strong>4 semanas</strong> según resolución de síntomas</span></div>
+<div class="info-row"><span class="info-label">Inicio empírico</span><span class="info-val">Cefuroxima o ceftriaxona; rotar por antibiograma a ciprofloxacino o TMP-SMX</span></div>
+</div>
+</div>
 </div>
 
 <!-- ===== GINECO-OBS ===== -->
 <div class="section-label" data-cat="gin">Gineco-obstétrico</div>
-
 <div class="card" data-cat="gin">
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-gin">Gineco-obs</span>
+<span class="card-title">Cistitis en embarazo</span>
+<span class="card-dur">5–7 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Cefalexina 500 mg c/6 h × 5–7 días<br>Amoxicilina-clavulánico × 5–7 días<br><em>Nitrofurantoína: evitar en 1er trim. y ≥36 sem.</em></span></div>
+<div class="info-row"><span class="info-label">Bacteriuria asintomática</span><span class="info-val">Sí tratar en embarazo: fosfomicina 3g dosis única o 4–7 días según ATB. Urocultivo de control post-tratamiento.</span></div>
+<div class="info-row"><span class="info-label">Pielonefritis</span><span class="info-val">7–10 días. Considerar hospitalización. Ceftriaxona IV hasta estabilidad → rotar oral.</span></div>
+</div>
+<div class="alerta">⚠ Evitar: quinolonas y TMP-SMX (especialmente 1er trimestre y cerca del término).</div>
+</div>
+</div>
+
+<!-- ===== PIE DIABÉTICO ===== -->
+<div class="section-label" data-cat="pie">Pie diabético</div>
+<div class="card" data-cat="pie">
   <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-gin">Gineco-obs</span>
-    <span class="card-title">Cistitis en embarazo</span>
-    <span class="card-dur">5–7 días</span>
+    <span class="badge badge-skin">Pie diabético</span>
+    <span class="card-title">Infección de pie diabético (IPD) — Visión actual en Argentina</span>
+    <span class="card-dur">1–6 semanas</span>
     <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
   </div>
   <div class="card-body">
     <div class="info-grid">
-      <div class="info-row"><span class="info-label">1ª línea</span><span class="info-val">Cefalexina 500 mg c/6 h × 5–7 días<br>Amoxicilina-clavulánico × 5–7 días<br><em>Nitrofurantoína: evitar en 1er trim. y ≥36 sem.</em></span></div>
-      <div class="info-row"><span class="info-label">Bacteriuria asintomática</span><span class="info-val">Sí tratar en embarazo: fosfomicina 3g dosis única o 4–7 días según ATB. Urocultivo de control post-tratamiento.</span></div>
-      <div class="info-row"><span class="info-label">Pielonefritis</span><span class="info-val">7–10 días. Considerar hospitalización. Ceftriaxona IV hasta estabilidad → rotar oral.</span></div>
+      <div class="info-row">
+        <span class="info-label">Microbiología regional</span>
+        <span class="info-val">Mayor peso de bacilos Gram negativos (43,8% en Latinoamérica, en aumento en Argentina del 24,6% al 47,1% entre 2015–2018). <em>S. aureus</em> es el germen único más frecuente (19,9%). Alta resistencia a ampicilina, quinolonas y cefuroxima; mejor sensibilidad a meropenem, piperacilina/tazobactam y amikacina.</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Duración del tratamiento</span>
+        <span class="info-val"><strong>Partes blandas (leve-moderada):</strong> 1–2 semanas (prolongar a 3–4 sem. si muy extensa o enfermedad arterial periférica severa).<br><strong>Osteomielitis:</strong> Hasta 6 semanas (puede acortarse tras resección completa de hueso infectado).</span>
+      </div>
+      <div class="info-row">
+        <span class="info-label">Principios prácticos</span>
+        <span class="info-val"><strong>Siempre</strong> tomar muestra de tejido profundo para cultivo y ajustar el esquema. Elegir empírico según: gravedad (IWGDF/IDSA), duración de la úlcera, isquemia y patrón local de resistencia. En infecciones moderadas-graves, considerar betalactámicos de amplio espectro o carbapenémicos.</span>
+      </div>
     </div>
-    <div class="alerta">⚠ Evitar: quinolonas y TMP-SMX (especialmente 1er trimestre y cerca del término).</div>
+    
+    <table class="pen-table" style="margin-top: 0.8rem;">
+      <tr><th>Contexto local</th><th>Esquema empírico sugerido</th><th>Comentario</th></tr>
+      <tr>
+        <td>Hospital de Buenos Aires, partes blandas</td>
+        <td>Amoxicilina–clavulánico + ciprofloxacina</td>
+        <td>Mejor cobertura de Gram negativos que TMP/SMX (Gv et al., 2019)</td>
+      </tr>
+      <tr>
+        <td>Red latinoamericana, manejo ambulatorio</td>
+        <td>Ciprofloxacina o TMP/SMX (GN); TMP/SMX + rifampicina (<em>S. aureus</em>)</td>
+        <td>Control precoz, pasar a IV si falla VO (Carro et al., 2020)</td>
+      </tr>
+    </table>
+
+    <div class="alerta-amber" style="margin-top: 0.8rem;">
+      ⚠ <strong>Conclusión clave:</strong> El tratamiento en Argentina combina guías IWGDF/IDSA con datos locales que muestran alta proporción de Gram negativos y resistencia creciente. Es clave iniciar antibiótico empírico según gravedad y ajustar luego a cultivos, con duraciones acotadas.
+    </div>
+    <div class="nota" style="margin-top: 0.65rem;">
+      <strong>Fuentes:</strong> Carro et al., 2020; Gv et al., 2019; Moya-Salazar et al., 2023; Lipsky et al., 2020; Senneville et al., 2023 (IWGDF/IDSA 2023).
+    </div>
   </div>
 </div>
 
 <!-- ===== OTRAS ===== -->
 <div class="section-label" data-cat="other">Otras infecciones</div>
-
 <div class="card" data-cat="other">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-other">Otras</span>
-    <span class="card-title">Infección intraabdominal (foco controlado)</span>
-    <span class="card-dur">⬇ 3–7 días</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Duración</span><span class="info-val">Localizada + foco controlado: <strong>2–3 días</strong><br>Generalizada: <strong>5–7 días</strong><br>&lt;24 h: apendicitis/colecistitis gangrenosa sin perforación, perforación gastroduodenal</span></div>
-      <div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Metronidazol + cefalosporina 3ª gen<br>O amoxicilina-clavulánico + aminoglucósido</span></div>
-    </div>
-    <div class="nota">IDSA: 4–7 días con foco controlado. Sin beneficio de prolongar más allá de la estabilidad clínica.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-other">Otras</span>
+<span class="card-title">Infección intraabdominal (foco controlado)</span>
+<span class="card-dur">⬇ 3–7 días</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Duración</span><span class="info-val">Localizada + foco controlado: <strong>2–3 días</strong><br>Generalizada: <strong>5–7 días</strong><br>&lt;24 h: apendicitis/colecistitis gangrenosa sin perforación, perforación gastroduodenal</span></div>
+<div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Metronidazol + cefalosporina 3ª gen<br>O amoxicilina-clavulánico + aminoglucósido</span></div>
+</div>
+<div class="nota">IDSA: 4–7 días con foco controlado. Sin beneficio de prolongar más allá de la estabilidad clínica.</div>
+</div>
 </div>
 
 <div class="card" data-cat="other">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-other">Otras</span>
-    <span class="card-title">Meningitis bacteriana (no TB)</span>
-    <span class="card-dur">7–21 días según germen</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">N. meningitidis</span><span class="info-val">Ceftriaxona IV × <strong>7 días</strong></span></div>
-      <div class="info-row"><span class="info-label">S. pneumoniae</span><span class="info-val">Ceftriaxona + vancomicina × <strong>10–14 días</strong></span></div>
-      <div class="info-row"><span class="info-label">H. influenzae</span><span class="info-val">Ceftriaxona IV × <strong>7–10 días</strong></span></div>
-      <div class="info-row"><span class="info-label">Listeria monocytogenes</span><span class="info-val">Ampicilina + gentamicina × <strong>≥21 días</strong></span></div>
-    </div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-other">Otras</span>
+<span class="card-title">Meningitis bacteriana (no TB)</span>
+<span class="card-dur">7–21 días según germen</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">N. meningitidis</span><span class="info-val">Ceftriaxona IV × <strong>7 días</strong></span></div>
+<div class="info-row"><span class="info-label">S. pneumoniae</span><span class="info-val">Ceftriaxona + vancomicina × <strong>10–14 días</strong></span></div>
+<div class="info-row"><span class="info-label">H. influenzae</span><span class="info-val">Ceftriaxona IV × <strong>7–10 días</strong></span></div>
+<div class="info-row"><span class="info-label">Listeria monocytogenes</span><span class="info-val">Ampicilina + gentamicina × <strong>≥21 días</strong></span></div>
+</div>
+</div>
 </div>
 
 <div class="card" data-cat="other">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-other">Otras</span>
-    <span class="card-title">Osteomielitis y artritis séptica</span>
-    <span class="card-dur">3–6 semanas</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Osteomielitis</span><span class="info-val">IV 1–2 sem → oral: total <strong>4–6 semanas</strong>. SAMR: <strong>≥8 semanas</strong></span></div>
-      <div class="info-row"><span class="info-label">Artritis séptica nativa</span><span class="info-val"><strong>3–4 semanas</strong> total (incluye drenaje/desbridamiento)</span></div>
-      <div class="info-row"><span class="info-label">Infección protésica</span><span class="info-val">Staphylococcus: 3 meses (cadera) / 6 meses (rodilla) con rifampicina</span></div>
-      <div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Cefazolina/cloxacilina IV → cefalosporina oral. SAMR: vancomicina ± rifampicina</span></div>
-    </div>
-    <div class="nota">Excepción a la tendencia de cursos cortos. Duración prolongada justificada por la naturaleza avascular del tejido óseo.</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-other">Otras</span>
+<span class="card-title">Osteomielitis y artritis séptica</span>
+<span class="card-dur">3–6 semanas</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Osteomielitis</span><span class="info-val">IV 1–2 sem → oral: total <strong>4–6 semanas</strong>. SAMR: <strong>≥8 semanas</strong></span></div>
+<div class="info-row"><span class="info-label">Artritis séptica nativa</span><span class="info-val"><strong>3–4 semanas</strong> total (incluye drenaje/desbridamiento)</span></div>
+<div class="info-row"><span class="info-label">Infección protésica</span><span class="info-val">Staphylococcus: 3 meses (cadera) / 6 meses (rodilla) con rifampicina</span></div>
+<div class="info-row"><span class="info-label">Esquema</span><span class="info-val">Cefazolina/cloxacilina IV → cefalosporina oral. SAMR: vancomicina ± rifampicina</span></div>
+</div>
+<div class="nota">Excepción a la tendencia de cursos cortos. Duración prolongada justificada por la naturaleza avascular del tejido óseo.</div>
+</div>
 </div>
 
 <div class="card" data-cat="other">
-  <div class="card-head" onclick="toggle(this)">
-    <span class="badge badge-other">Otras</span>
-    <span class="card-title">Profilaxis antibiótica perioperatoria</span>
-    <span class="card-dur">⬇ Dosis única</span>
-    <svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
-  </div>
-  <div class="card-body">
-    <div class="info-grid">
-      <div class="info-row"><span class="info-label">Esquema estándar</span><span class="info-val">Cefazolina 2 g IV, dosis única, ≤120 min antes de incisión<br><em>Si contaminación esperada: + metronidazol 500 mg IV</em></span></div>
-      <div class="info-row"><span class="info-label">Duración máxima</span><span class="info-val"><strong>Dosis única</strong> en la mayoría. No superar 24 h postoperatorio.</span></div>
-      <div class="info-row"><span class="info-label">Repetir dosis si</span><span class="info-val">Cirugía >4 h o pérdida sanguínea significativa: repetir al doble de la vida media del ATB.</span></div>
-    </div>
-    <div class="alerta">⚠ La profilaxis prolongada NO previene más infecciones y es una de las principales fuentes de prescripción inapropiada. Evidencia fuerte (IDSA, NICE, ECDC).</div>
-  </div>
+<div class="card-head" onclick="toggle(this)">
+<span class="badge badge-other">Otras</span>
+<span class="card-title">Profilaxis antibiótica perioperatoria</span>
+<span class="card-dur">⬇ Dosis única</span>
+<svg class="chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6l4 4 4-4"/></svg>
+</div>
+<div class="card-body">
+<div class="info-grid">
+<div class="info-row"><span class="info-label">Esquema estándar</span><span class="info-val">Cefazolina 2 g IV, dosis única, ≤120 min antes de incisión<br><em>Si contaminación esperada: + metronidazol 500 mg IV</em></span></div>
+<div class="info-row"><span class="info-label">Duración máxima</span><span class="info-val"><strong>Dosis única</strong> en la mayoría. No superar 24 h postoperatorio.</span></div>
+<div class="info-row"><span class="info-label">Repetir dosis si</span><span class="info-val">Cirugía >4 h o pérdida sanguínea significativa: repetir al doble de la vida media del ATB.</span></div>
+</div>
+<div class="alerta">⚠ La profilaxis prolongada NO previene más infecciones y es una de las principales fuentes de prescripción inapropiada. Evidencia fuerte (IDSA, NICE, ECDC).</div>
+</div>
 </div>
 
 <!-- EXCLUSIONES -->
 <div class="section-label">Contraindicaciones para cursos cortos</div>
 <div class="exclusions">
-  <strong>No acortar en:</strong> Inmunosupresión grave · Gérmenes multirresistentes · Endocarditis bacteriana · Tuberculosis · Infecciones protésicas · Osteomielitis · Control de foco inadecuado · Respuesta clínica lenta · Acceso limitado del ATB al sitio · Bacteriemia persistente
+<strong>No acortar en:</strong> Inmunosupresión grave · Gérmenes multirresistentes · Endocarditis bacteriana · Tuberculosis · Infecciones protésicas · Osteomielitis · Control de foco inadecuado · Respuesta clínica lenta · Acceso limitado del ATB al sitio · Bacteriemia persistente
 </div>
 
 <!-- PEN-FAST -->
 <div class="pen-fast">
-  <div class="pen-fast-title">Score PEN-FAST — evaluación rápida de alergia a penicilina (SADI 2025)</div>
-  <p style="font-size:12px;color:var(--text-muted);margin-bottom:0.5rem">La alergia a penicilina es frecuentemente sobreestimada. VPN del 96.3% para puntuaciones &lt;3.</p>
-  <table class="pen-table">
-    <tr><th>Criterio</th><th>Puntos</th></tr>
-    <tr><td>Episodio hace <strong>menos de 5 años</strong></td><td>2</td></tr>
-    <tr><td>Antecedente de <strong>anafilaxia o angioedema</strong></td><td>2</td></tr>
-    <tr><td><strong>Reacción cutánea severa</strong></td><td>2</td></tr>
-    <tr><td>Recibió <strong>tratamiento para la reacción</strong></td><td>1</td></tr>
-    <tr><td style="border-top:2px solid var(--border-strong)"><strong>0 puntos</strong></td><td>Riesgo muy bajo (~1%)</td></tr>
-    <tr><td><strong>1–2 puntos</strong></td><td>Riesgo bajo (~5%)</td></tr>
-    <tr><td><strong>3 puntos</strong></td><td>Riesgo moderado (~20%)</td></tr>
-    <tr><td><strong>4–5 puntos</strong></td><td>Riesgo elevado</td></tr>
-  </table>
+<div class="pen-fast-title">Score PEN-FAST — evaluación rápida de alergia a penicilina (SADI 2025)</div>
+<p style="font-size:12px;color:var(--text-muted);margin-bottom:0.5rem">La alergia a penicilina es frecuentemente sobreestimada. VPN del 96.3% para puntuaciones &lt;3.</p>
+<table class="pen-table">
+<tr><th>Criterio</th><th>Puntos</th></tr>
+<tr><td>Episodio hace <strong>menos de 5 años</strong></td><td>2</td></tr>
+<tr><td>Antecedente de <strong>anafilaxia o angioedema</strong></td><td>2</td></tr>
+<tr><td><strong>Reacción cutánea severa</strong></td><td>2</td></tr>
+<tr><td>Recibió <strong>tratamiento para la reacción</strong></td><td>1</td></tr>
+<tr><td style="border-top:2px solid var(--border-strong)"><strong>0 puntos</strong></td><td>Riesgo muy bajo (~1%)</td></tr>
+<tr><td><strong>1–2 puntos</strong></td><td>Riesgo bajo (~5%)</td></tr>
+<tr><td><strong>3 puntos</strong></td><td>Riesgo moderado (~20%)</td></tr>
+<tr><td><strong>4–5 puntos</strong></td><td>Riesgo elevado</td></tr>
+</table>
 </div>
 
 <div class="footer">
-  Fuentes: Guía SADI 2025 (De Vedia L. et al., intersociedades: SADI · SAD · AAC · SAM · SADEBAC · SMIBA · SATI) · Álvarez Martins et al., FMC 2020 · Fabbiani S., Boletín Farmacológico HC Uruguay 2020 · Mo Y. et al., JAC-AMR 2025 (315 ECAs) · IDSA · NICE · EAU · OMS AWaRe 2023 · Red WHONET Argentina 2022–2023<br>
-  Resumen de referencia clínica. Individualizar siempre según paciente, microorganismo y contexto clínico local.
+Fuentes: Guía SADI 2025 (De Vedia L. et al., intersociedades: SADI · SAD · AAC · SAM · SADEBAC · SMIBA · SATI) · Álvarez Martins et al., FMC 2020 · Fabbiani S., Boletín Farmacológico HC Uruguay 2020 · Mo Y. et al., JAC-AMR 2025 (315 ECAs) · IDSA · NICE · EAU · OMS AWaRe 2023 · Red WHONET Argentina 2022–2023<br>
+Resumen de referencia clínica. Individualizar siempre según paciente, microorganismo y contexto clínico local.
 </div>
-
 </div><!-- /page -->
 
 <script>
 function toggle(head){
-  var body=head.nextElementSibling;
-  var chev=head.querySelector('.chevron');
-  var open=body.classList.contains('open');
-  body.classList.toggle('open',!open);
-  chev.classList.toggle('open',!open);
+var body=head.nextElementSibling;
+var chev=head.querySelector('.chevron');
+var open=body.classList.contains('open');
+body.classList.toggle('open',!open);
+chev.classList.toggle('open',!open);
 }
 function filter(cat,el){
-  document.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active');});
-  el.classList.add('active');
-  document.querySelectorAll('.card').forEach(function(c){
-    c.classList.toggle('hidden', cat!=='all' && c.dataset.cat!==cat);
-  });
-  document.querySelectorAll('.section-label').forEach(function(s){
-    if(cat==='all'){s.style.display='';return;}
-    s.style.display = s.dataset.cat===cat ? '' : 'none';
-  });
+document.querySelectorAll('.pill').forEach(function(p){p.classList.remove('active');});
+el.classList.add('active');
+document.querySelectorAll('.card').forEach(function(c){
+c.classList.toggle('hidden', cat!=='all' && c.dataset.cat!==cat);
+});
+document.querySelectorAll('.section-label').forEach(function(s){
+if(cat==='all'){s.style.display='';return;}
+s.style.display = s.dataset.cat===cat ? '' : 'none';
+});
 }
 </script>
 </body>
